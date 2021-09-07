@@ -11,6 +11,7 @@
         <div class="col-8">
             <div>
                 <h4> {{ $user->name }} </h4>
+                <a class="btn btn-info btn-sm float-right" href="/p/create">Upload</a>
             </div>
             <div class="d-flex">
                 <div class="mr-4"> <strong>400K</strong> Followers </div>
@@ -30,24 +31,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-4 pt-4">
-            <img src="https://res.cloudinary.com/crunchbase-production/image/upload/ikqra03zdnggljdu5vv0" class="w-100" alt="">
-        </div>
-        <div class="col-4 pt-4">
-            <img src="https://res.cloudinary.com/crunchbase-production/image/upload/ikqra03zdnggljdu5vv0" class="w-100" alt="">
-        </div>
-        <div class="col-4 pt-4">
-            <img src="https://res.cloudinary.com/crunchbase-production/image/upload/ikqra03zdnggljdu5vv0" class="w-100" alt="">
-        </div>
-        <div class="col-4 pt-4">
-            <img src="https://res.cloudinary.com/crunchbase-production/image/upload/ikqra03zdnggljdu5vv0" class="w-100" alt="">
-        </div>
-        <div class="col-4 pt-4">
-            <img src="https://res.cloudinary.com/crunchbase-production/image/upload/ikqra03zdnggljdu5vv0" class="w-100" alt="">
-        </div>
-        <div class="col-4 pt-4">
-            <img src="https://res.cloudinary.com/crunchbase-production/image/upload/ikqra03zdnggljdu5vv0" class="w-100" alt="">
-        </div>
+        @foreach($user->posts as $post)
+            <div class="col-4 pt-4">
+                <img src="/storage/{{ $post->image  }}" class="w-100" alt="">
+            </div>
+        @endforeach
+
     </div>
 </div>
 @endsection

@@ -9,7 +9,7 @@ class ProfilesController extends Controller
 {
     public function index()
     {
-        return view('home');
+        return view('welcome');
     }
 
     public function show($user)
@@ -23,10 +23,10 @@ class ProfilesController extends Controller
             );
             return $data;
         }else{
-            return view('home', [
+            return view('profiles.index', [
                 'user' => $user
             ]);
         }
-       
+
     }
 }
