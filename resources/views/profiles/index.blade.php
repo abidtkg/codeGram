@@ -16,7 +16,7 @@
             <div class="d-flex">
                 <div class="mr-4"> <strong>400K</strong> Followers </div>
                 <div class="mr-4"> <strong>400K</strong> Following </div>
-                <div class="mr-4"> <strong>400K</strong> Posts </div>
+                <div class="mr-4"> <strong>{{ $user->posts->count() }}</strong> Posts </div>
             </div>
             <div class="mt-2">
                 <p> {{ $user->profile->title }} </p>
